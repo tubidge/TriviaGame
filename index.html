@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Space Cadet Trivia!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <div class="row">
+            <div class="col col-sm-12">
+                <h1>SPACE CADET TRIVIA!</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-sm-3">
+                <button class="start-button">Start</button>
+            </div>
+            <div class="col col-sm-8">
+                <span id="timer">
+                    <h3>Time Remaining: </h3>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-sm-12">
+                <div id="question-box">
+                    <div>
+                        <h3>Question One</h3>
+                        <section id="question-one"></section>
+                        <form id="answer-one"></form>
+                    </div>
+
+                    <div>
+                        <h3>Question Two</h3>
+                        <section id="question-two"></section>
+                        <section id="answer-two"></section>
+                    </div>
+
+                    <div>
+                        <h3>Question Three</h3>
+                        <section id="question-three"></section>
+                        <section id="answer-three"></section>
+                    </div>
+
+                    <div>
+                        <h3>Question Four</h3>
+                        <section id="question-four"></section>
+                        <section id="answer-four"></section>
+                    </div>
+
+                    <div>
+                        <h3>Question Five</h3>
+                        <section id="question-five"></section>
+                        <section id="answer-five"></section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-6">
+            <h4>Correct: </h4>
+            <section id="wins"></section>
+        </div>
+        <div class="col col-sm-6">
+            <h4>Incorrect: </h4>
+            <section id="losses"></section>
+        </div>
+    </div>
+    </div>
+
+    <script src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>
