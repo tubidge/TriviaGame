@@ -1,6 +1,7 @@
 var playerWins;
 var playerLosses;
 
+// An array holding each trivia question, it's correct answer, and a comment if the answer is false.
 var questions = [{
         name: "questionOne",
         content: "Earth's moon is the largest in our solar system.",
@@ -78,7 +79,6 @@ function startTimer() {
 function stopTimer() {
     clearInterval(intervalID);
     timerOn = false;
-    // Run function to evaluate and display answers.
 };
 
 function count() {
@@ -88,6 +88,9 @@ function count() {
         stopTimer();
         alert("Time's Up!");
         showResults();
+        // I have not yet figured out how to capture user answers. 
+        // Once I do, I will create a function to evaluate the answers.
+        // Then I will create a function to display the user's score.
     };
 };
 
@@ -98,7 +101,7 @@ function reset() {
     console.log("Wins - " + playerWins + ", Losses - " + playerLosses);
 };
 
-// declare variables to hold each question object, so the corresponding answer can be pulled.
+// Declaring variables to hold each question object's answer and the corresponding 'comment'.
 var answerOne;
 var commentOne;
 var answerTwo;
@@ -111,8 +114,6 @@ var answerFive;
 var commentFive;
 
 // Function to assign a random question to the each placeholder.
-// For loop 5 times, selecting a random question, splicing it from array.
-// Assign that question to the correct placeholder 
 function start() {
     resetArray();
     createFirst();
@@ -121,6 +122,9 @@ function start() {
     createFourth();
     createFifth();
 
+    // The following block of code works well for displaying 5 random questions on the page.
+    // However, I could not figure out a way to assign the 'answer' from the question object array
+    // to a variable using this for loop. So, I just created 5 separate functions further down. Nice n wet.
     // for (i = 0; i < 5; i++) {
     //     var index = (Math.floor(Math.random() * questions.length))
     //     var question = questions[index].content;
@@ -150,7 +154,7 @@ function start() {
     startTimer();
 };
 
-
+// The following five functions replaced my for loop from above. 
 function createFirst() {
     var i = Math.floor(Math.random() * questions.length);
     answerOne = questions[i].answer;
@@ -207,7 +211,7 @@ function createFifth() {
 };
 
 
-
+// This function displays the correct answer and the applicable comment, if available, for each question.
 function showResults() {
     if (answerOne === "False") {
         $("#correct-one").text("The correct answer is: " + answerOne + ". " + commentOne + ".");
@@ -244,7 +248,8 @@ function scoreGame() {
 
 }
 
-
+// This function resets the original object array. 
+// This is necessary because I am splicing each object from the array as it is randomly chosen to be displayed on the page.
 function resetArray() {
     questions = [{
             name: "questionOne",
